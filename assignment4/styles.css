@@ -1,0 +1,86 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+fieldset {
+    border: 2px solid #af4cad; /* สีกรอบ */
+    padding: 15px;
+    border-radius: 10px; /* มุมโค้ง */
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+legend {
+    font-weight: bold;
+    color: #af4caa;
+}
+
+/* Input fields */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="date"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Buttons */
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #a04580;
+}
+
+input[type="reset"] {
+    background-color: #36f4e7; /* สีแดง */
+}
+
+input[type="reset"]:hover {
+    background-color: #2f9ad3;
+}
+
+/* Error messages */
+#errorMsg {
+    color: rgb(0, 255, 238);
+    font-weight: bold;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    fieldset {
+        padding: 10px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+    }
+}

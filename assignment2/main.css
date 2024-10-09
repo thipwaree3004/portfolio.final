@@ -1,0 +1,170 @@
+/* CSS พื้นฐาน */
+body {
+    background-color: rgb(233, 200, 13);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+h1, h2 {
+    background-color: rgb(230, 191, 51);
+    color: rgb(255, 156, 8);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    margin: 0;
+    padding: 15px;
+    border-radius: 8px; /* เพิ่มมุมโค้ง */
+}
+
+img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+h2 {
+    padding: 15px 30px; /* เพิ่มพื้นที่รอบ ๆ */
+}
+
+ul {
+    font-family: Garamond, "Times New Roman", serif;
+    font-size: 1.2rem; /* ขยายขนาดฟอนต์เล็กน้อย */
+    font-weight: bold;
+    font-style: italic;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    max-width: 350px; /* เพิ่มความกว้างสูงสุด */
+}
+
+#header {
+    text-align: center;
+    border: 3px solid rgb(211, 119, 13); /* เพิ่มความหนาของขอบ */
+    border-radius: 12px; /* เพิ่มความโค้งมน */
+    background-color: rgb(230, 226, 173);
+    padding: 1.5rem; /* เพิ่มพื้นที่ภายใน */
+    grid-column: 1 / -1; /* ปรับให้ครอบคลุมความกว้างทั้งหมด */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
+}
+
+#menu, #main, #right {
+    padding: 1.5rem; /* เพิ่มพื้นที่ภายใน */
+    border-radius: 12px; /* เพิ่มความโค้งมน */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
+}
+
+#menu {
+    border: 3px solid rgb(0, 0, 0); /* เพิ่มความหนาของขอบ */
+    background-color: #e2cb20; /* เพิ่มสีพื้นหลัง */
+}
+
+#main {
+    border: 3px solid rgb(0, 0, 0); /* เพิ่มความหนาของขอบ */
+    background-color: #e7df42; /* เพิ่มสีพื้นหลัง */
+}
+
+#right {
+    border: 3px solid rgb(0, 0, 0); /* เพิ่มความหนาของขอบ */
+    background-color: #e6dc12; /* เพิ่มสีพื้นหลัง */
+}
+
+#footer {
+    background-color: #fca608;
+    border: 3px solid rgb(0, 0, 0); /* เพิ่มความหนาของขอบ */
+    border-radius: 12px; /* เพิ่มความโค้งมน */
+    text-align: center;
+    padding: 1.5rem; /* เพิ่มพื้นที่ภายใน */
+    grid-column: 1 / -1; /* ปรับให้ครอบคลุมความกว้างทั้งหมด */
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงาด้านบน */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem; /* เพิ่มระยะห่างระหว่างคอลัมน์ */
+    padding: 2rem;
+}
+
+.instructions-images, .recipe-images, .images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem; /* เพิ่มระยะห่างด้านล่าง */
+}
+
+.instructions-images img, .recipe-images img, .images img {
+    width: 100%;
+    max-width: 150px; /* ขยายขนาดสูงสุด */
+    border-radius: 8px; /* เพิ่มความโค้งมน */
+}
+
+ol {
+    margin: 0;
+    padding: 0;
+    list-style-position: inside;
+    font-size: 1.1rem; /* ขยายขนาดฟอนต์เล็กน้อย */
+}
+
+/* Media Queries */
+
+/* ขนาดเล็ก (มือถือ) */
+@media only screen and (max-width: 599px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    #menu, #main, #right, #footer {
+        grid-column: 1 / -1;
+    }
+
+    .instructions-images img, .recipe-images img, .images img {
+        max-width: 100%; /* ขยายขนาดสูงสุด */
+    }
+}
+
+/* ขนาดกลาง (แท็บเล็ต) */
+@media only screen and (min-width: 600px) and (max-width: 1199px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #menu {
+        grid-column: 1 / 2;
+    }
+
+    #main {
+        grid-column: 2 / 3;
+    }
+
+    #right {
+        grid-column: 1 / 3; /* ขยายให้ครอบคลุมทั้งสองคอลัมน์ */
+    }
+
+    .instructions-images img, .recipe-images img, .images img {
+        max-width: 100%; /* ขยายขนาดสูงสุด */
+    }
+}
+
+/* ขนาดใหญ่ (เดสก์ท็อป) */
+@media only screen and (min-width: 1200px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    #menu {
+        grid-column: 1 / 2;
+    }
+
+    #main {
+        grid-column: 2 / 3;
+    }
+
+    #right {
+        grid-column: 3 / 4;
+    }
+
+    .instructions-images img, .recipe-images img, .images img {
+        max-width: 150px; /* ขยายขนาดสูงสุด */
+    }
+}
